@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-arima);
+}
+
+/* Force class strategy for dark mode */
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #fffbf0;
+  /* Very light honey tint */
+  --foreground: #422006;
+  /* Dark brown */
+
+  /* Honey/Gold Primary */
+  --primary: #f59e0b;
+  /* amber-500 */
+  --primary-foreground: #ffffff;
+
+  /* Brown/Earth Secondary */
+  --secondary: #78350f;
+  /* amber-900 */
+  --secondary-foreground: #fffbeb;
+  /* amber-50 */
+
+  /* Accent */
+  --accent: #fbbf24;
+  /* amber-400 */
+  --accent-foreground: #422006;
+
+  /* Card */
+  --card: #ffffff;
+  --card-foreground: #422006;
+
+  --border: #fcd34d;
+  /* amber-300 */
+
+  --radius: 1rem;
+}
+
+.dark {
+  /* Earth Brown Background - Deep warm brown like rich soil */
+  --background: #2d1b0e;
+  /* Custom dark brown */
+  --foreground: #f5deb3;
+  /* Wheat/cream color for text */
+
+  /* Honey Gold Primary - Brighter in dark mode */
+  --primary: #fbbf24;
+  /* amber-400 */
+  --primary-foreground: #2d1b0e;
+  /* Dark brown */
+
+  /* Warm Brown Secondary */
+  --secondary: #8b4513;
+  /* Saddle brown */
+  --secondary-foreground: #fef3c7;
+  /* amber-100 */
+
+  /* Accent - Lighter honey tone */
+  --accent: #d97706;
+  /* amber-600 */
+  --accent-foreground: #fef3c7;
+
+  /* Card - Slightly lighter brown */
+  --card: #3e2723;
+  /* Brown 900 */
+  --card-foreground: #f5deb3;
+
+  /* Border - Medium brown */
+  --border: #6d4c41;
+  /* Brown 600 */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Utilities */
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.font-heading {
+  font-family: var(--font-heading), serif;
+}
+
+/* Honey Drip Effect */
+.honey-drip-top {
+  position: relative;
+}
+
+.honey-drip-top::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f59e0b' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
