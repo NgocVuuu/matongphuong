@@ -65,51 +65,40 @@ export function Products() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group bg-gradient-to-br from-white via-amber-50/30 to-white dark:from-card dark:via-amber-900/10 dark:to-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-amber-200/50 dark:border-amber-800/50 hover:border-amber-400 dark:hover:border-amber-600 flex flex-col"
+                            className="group bg-card rounded-sm overflow-hidden border border-border hover:border-primary/50 transition-colors duration-300 flex flex-col p-4 shadow-sm"
                         >
-                            <div className="relative aspect-square overflow-hidden bg-white dark:bg-card">
+                            <div className="relative aspect-square overflow-hidden bg-background/50 mb-4 border border-foreground/5">
                                 <Image
                                     src={product.image}
                                     alt={product.name}
                                     fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-amber-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                                    <button
-                                        onClick={() => handleBuy(product.name)}
-                                        className="p-3 bg-gradient-to-r from-amber-400 to-amber-600 text-white rounded-full hover:from-amber-500 hover:to-amber-700 transition-colors shadow-lg transform translate-y-4 group-hover:translate-y-0 duration-300"
-                                        title="Mua qua Messenger"
-                                    >
-                                        <MessageCircle className="h-6 w-6" />
-                                    </button>
-                                </div>
                             </div>
 
-                            <div className="p-6 flex-1 flex flex-col">
-                                <div className="flex items-center gap-1 mb-3">
+                            <div className="flex-1 flex flex-col items-center text-center">
+                                <div className="flex items-center gap-1 mb-2">
                                     {[...Array(5)].map((_, i) => (
                                         <Star
                                             key={i}
-                                            className={`h-4 w-4 ${i < Math.floor(product.rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
+                                            className={`h-3 w-3 ${i < Math.floor(product.rating) ? "text-primary fill-primary" : "text-gray-300"}`}
                                         />
                                     ))}
-                                    <span className="text-xs text-foreground/50 ml-1">({product.rating})</span>
                                 </div>
 
-                                <h3 className="text-xl font-bold mb-2 font-heading group-hover:text-primary transition-colors">{product.name}</h3>
-                                <p className="text-sm text-foreground/60 dark:text-foreground/50 mb-4 line-clamp-2">{product.desc}</p>
+                                <h3 className="text-xl font-bold mb-2 font-heading text-foreground">{product.name}</h3>
+                                <p className="text-sm text-foreground/70 mb-4 line-clamp-2 italic font-serif">{product.desc}</p>
 
-                                <div className="mt-auto flex items-center justify-between pt-4 border-t border-amber-200 dark:border-amber-800">
-                                    <div>
-                                        <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-amber-800 dark:from-amber-400 dark:to-amber-600 bg-clip-text text-transparent">{product.price}</span>
-                                        <span className="text-xs text-foreground/50 ml-1">/{product.unit}</span>
+                                <div className="mt-auto w-full pt-4 border-t border-border flex flex-col gap-3">
+                                    <div className="flex items-center justify-center gap-1">
+                                        <span className="text-xl font-bold font-heading text-primary">{product.price}</span>
+                                        <span className="text-xs text-foreground/50">/{product.unit}</span>
                                     </div>
                                     <button
                                         onClick={() => handleBuy(product.name)}
-                                        className="px-4 py-2 bg-gradient-to-r from-amber-400 to-amber-600 text-white font-bold rounded-full hover:from-amber-500 hover:to-amber-700 transition-all flex items-center gap-2 text-sm shadow-md"
+                                        className="w-full py-2 bg-transparent border border-primary text-primary font-heading font-semibold hover:bg-primary hover:text-white transition-colors uppercase text-sm tracking-wider"
                                     >
-                                        <ShoppingCart className="h-4 w-4" />
-                                        Mua Ngay
+                                        Mua Qua Zalo / Đặt Hàng
                                     </button>
                                 </div>
                             </div>

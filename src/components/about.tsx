@@ -30,49 +30,41 @@ export function About() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 bg-white dark:bg-amber-900 px-4 py-2 rounded-full shadow-lg shadow-amber-900/5 border-2 border-amber-200 dark:border-amber-700"
+                        className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 bg-card px-4 py-1 border border-border"
                     >
-                        <div className="flex items-center gap-2">
-                            <span className="text-2xl">🍯</span>
-                            <span className="font-bold text-sm text-foreground whitespace-nowrap">100% Tinh Khiết & Tự Nhiên</span>
+                        <div className="flex items-center gap-2 font-heading">
+                            <span className="text-xl text-primary">🍯</span>
+                            <span className="font-semibold text-sm text-foreground uppercase tracking-widest whitespace-nowrap">100% Nguyên Bản</span>
                         </div>
                     </motion.div>
 
                     {/* Floating Honey Jar */}
                     <motion.div
                         animate={{
-                            y: [0, -20, 0],
+                            y: [0, -10, 0],
                         }}
                         transition={{
-                            duration: 4,
+                            duration: 5,
                             repeat: Infinity,
                             ease: "easeInOut"
                         }}
-                        className="relative bg-white dark:bg-[#2d1b0e] p-8 rounded-3xl shadow-xl shadow-amber-900/10 border border-amber-100 dark:border-amber-900"
+                        className="relative bg-background p-4 rounded-sm border border-border"
                     >
-                        <div className="relative aspect-square">
+                        <div className="relative aspect-square bg-card/30">
                             <Image
                                 src="/assets/images/about-img/about-img.webp"
                                 alt="Hũ Mật Ong Nguyên Chất"
                                 fill
-                                className="object-contain drop-shadow-2xl"
+                                className="object-contain"
                             />
                         </div>
                     </motion.div>
 
-                    {/* Decorative honey drops */}
+                    {/* Decorative square instead of honey drops */}
                     <motion.div
-                        animate={{
-                            y: [0, 10, 0],
-                            opacity: [0.5, 1, 0.5]
-                        }}
-                        transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: 0.5
-                        }}
-                        className="absolute -bottom-4 -right-4 w-16 h-16 bg-amber-400/20 dark:bg-amber-600/20 rounded-full blur-xl"
+                        animate={{ rotate: [0, 45, 0] }}
+                        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                        className="absolute -bottom-4 -right-4 w-12 h-12 bg-primary/5 border border-primary/20"
                     />
                 </motion.div>
 
@@ -84,36 +76,31 @@ export function About() {
                     transition={{ duration: 0.6 }}
                     className="order-2 lg:order-1"
                 >
-                    <span className="text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider text-sm mb-2 block">VỀ CHÚNG TÔI</span>
+                    <span className="text-primary font-semibold uppercase tracking-widest text-xs mb-3 block font-heading">VỀ CHÚNG TÔI</span>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-6 text-foreground leading-tight">
-                        Trải Nghiệm <span className="bg-gradient-to-r from-amber-600 to-amber-800 dark:from-amber-400 dark:to-amber-600 bg-clip-text text-transparent">Vàng Óng</span><br />
-                        Của Thiên Nhiên
+                        Tinh Túy <span className="text-primary italic font-normal">Nguyên Bản</span><br />
+                        Của Rừng Già
                     </h2>
-                    <p className="text-base text-foreground/70 dark:text-foreground/60 mb-6 leading-relaxed">
-                        Chào mừng đến với <span className="font-bold text-foreground">HoneyBlume</span>, nơi mỗi giọt mật ong được tạo ra bởi thiên nhiên và hoàn thiện bởi sự chăm sóc tận tâm.
-                        Mật ong của chúng tôi 100% nguyên chất, được lấy từ các trang trại thân thiện với môi trường và chứa đầy
-                        enzyme tự nhiên, dưỡng chất cùng vị ngọt từ những bông hoa đang nở rộ.
+                    <p className="text-base text-foreground/80 mb-6 leading-relaxed">
+                        Chào mừng đến với <span className="font-bold font-heading">Mật Ong Phượng</span>. Khác với quy trình công nghiệp, mỗi giọt mật của chúng tôi 
+                        giữ nguyên vẻ thô mộc của núi rừng. Thu hoạch hoàn toàn thủ công, không qua xử lý nhiệt 
+                        hay lọc tinh, mật ong của chúng tôi giữ lại trọn vẹn lớp phấn hoa, sáp và enzyme tự nhiên quý giá.
                     </p>
 
-                    <ul className="space-y-3 mb-8">
+                    <ul className="space-y-4 mb-8 font-serif">
                         {features.map((item, index) => (
                             <li key={index} className="flex items-center gap-3">
-                                <div className="w-5 h-5 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <CheckCircle className="h-3 w-3 text-white" strokeWidth={3} />
-                                </div>
-                                <span className="text-foreground/90 dark:text-foreground/80 font-medium">{item}</span>
+                                <div className="w-1.5 h-1.5 bg-primary flex-shrink-0" />
+                                <span className="text-foreground italic">{item}</span>
                             </li>
                         ))}
                     </ul>
 
                     <Link
                         href="#products"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-400 to-amber-600 text-white rounded-full font-bold hover:from-amber-500 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                        className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white hover:bg-primary/90 transition-colors uppercase font-semibold text-sm tracking-widest font-heading"
                     >
-                        MUA NGAY
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
+                        TÌM HIỂU THÊM
                     </Link>
                 </motion.div>
             </div>

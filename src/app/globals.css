@@ -10,73 +10,59 @@
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #fffbf0;
-  /* Very light honey tint */
-  --foreground: #422006;
-  /* Dark brown */
+  /* Earthy paper/kraft background */
+  --background: #f4ece1; 
+  /* Deep woodland brown */
+  --foreground: #3e2723;
 
-  /* Honey/Gold Primary */
-  --primary: #f59e0b;
-  /* amber-500 */
+  /* Natural Amber/Honey */
+  --primary: #c2410c; /* orange-700 / deep amber */
   --primary-foreground: #ffffff;
 
-  /* Brown/Earth Secondary */
-  --secondary: #78350f;
-  /* amber-900 */
-  --secondary-foreground: #fffbeb;
-  /* amber-50 */
+  /* Bark/Wood Secondary */
+  --secondary: #573117; 
+  --secondary-foreground: #f4ece1;
 
-  /* Accent */
-  --accent: #fbbf24;
-  /* amber-400 */
-  --accent-foreground: #422006;
+  /* Warm accent */
+  --accent: #d97706; /* amber-600 */
+  --accent-foreground: #3e2723;
 
-  /* Card */
-  --card: #ffffff;
-  --card-foreground: #422006;
+  /* Card - muted cotton/paper */
+  --card: #fcfaf8;
+  --card-foreground: #3e2723;
 
-  --border: #fcd34d;
-  /* amber-300 */
+  /* Soft border */
+  --border: #e2d5c4; 
 
-  --radius: 1rem;
+  /* Less rounded, more classic */
+  --radius: 0.25rem;
 }
 
 .dark {
-  /* Earth Brown Background - Deep warm brown like rich soil */
-  --background: #2d1b0e;
-  /* Custom dark brown */
-  --foreground: #f5deb3;
-  /* Wheat/cream color for text */
+  /* Dark woodland */
+  --background: #211c19;
+  --foreground: #e6ded6;
 
-  /* Honey Gold Primary - Brighter in dark mode */
-  --primary: #fbbf24;
-  /* amber-400 */
-  --primary-foreground: #2d1b0e;
-  /* Dark brown */
+  /* Muted Honey in dark */
+  --primary: #d97706; 
+  --primary-foreground: #211c19;
 
-  /* Warm Brown Secondary */
-  --secondary: #8b4513;
-  /* Saddle brown */
-  --secondary-foreground: #fef3c7;
-  /* amber-100 */
+  /* Deep Bark */
+  --secondary: #4a3324;
+  --secondary-foreground: #e6ded6;
 
-  /* Accent - Lighter honey tone */
-  --accent: #d97706;
-  /* amber-600 */
-  --accent-foreground: #fef3c7;
+  --accent: #b45309; 
+  --accent-foreground: #e6ded6;
 
-  /* Card - Slightly lighter brown */
-  --card: #3e2723;
-  /* Brown 900 */
-  --card-foreground: #f5deb3;
+  --card: #2c2521;
+  --card-foreground: #e6ded6;
 
-  /* Border - Medium brown */
-  --border: #6d4c41;
-  /* Brown 600 */
+  --border: #3d332d;
 }
 
 body {
   background: var(--background);
+  /* Add subtle texture feel with color */
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;

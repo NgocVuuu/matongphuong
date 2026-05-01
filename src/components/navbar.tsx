@@ -68,21 +68,21 @@ export function Navbar() {
                 </div>
 
                 {/* Actions */}
-                <div className="hidden md:flex items-center gap-4">
+                <div className="hidden md:flex items-center gap-4 font-heading">
                     <button
                         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                        className="p-2 rounded-full hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors"
+                        className="p-2 border border-border bg-card rounded-sm hover:bg-primary/10 transition-colors"
                         aria-label="Toggle theme"
                     >
                         {mounted && theme === "dark" ? (
-                            <Sun className="h-5 w-5 text-amber-400" />
+                            <Sun className="h-5 w-5 text-primary" />
                         ) : (
                             <Moon className="h-5 w-5 text-foreground" />
                         )}
                     </button>
                     <Link
                         href="#products"
-                        className="px-4 py-2 bg-gradient-to-r from-amber-400 to-amber-600 text-white rounded-full text-sm font-bold hover:from-amber-500 hover:to-amber-700 transition-colors shadow-md"
+                        className="px-6 py-2 bg-foreground text-background border border-foreground text-sm font-semibold uppercase tracking-wider hover:bg-foreground/90 transition-colors shadow-none rounded-sm"
                     >
                         Mua Ngay
                     </Link>
@@ -90,11 +90,11 @@ export function Navbar() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden p-2 text-foreground"
+                    className="md:hidden p-2 text-foreground border border-border bg-card rounded-sm flex items-center justify-center transition-colors hover:bg-primary/10"
                     onClick={toggleMenu}
                     aria-label="Menu"
                 >
-                    {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                 </button>
             </div>
 
@@ -105,7 +105,7 @@ export function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden border-b border-border bg-background"
+                        className="md:hidden border-t border-b border-border bg-background"
                     >
                         <div className="container-custom py-4 flex flex-col gap-4">
                             {navLinks.map((link) => (
@@ -118,11 +118,12 @@ export function Navbar() {
                                     {link.label}
                                 </Link>
                             ))}
-                            <div className="flex items-center justify-between px-2 pt-4 border-t border-border">
-                                <span className="text-sm font-medium">Giao diện</span>
+                            <div className="flex items-center justify-between px-2 pt-4 border-t border-border mt-2 pb-2">
+                                <span className="text-base font-medium text-foreground">Giao diện</span>
                                 <button
                                     onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                                    className="p-2 rounded-full bg-accent/10"
+                                    className="p-2 border border-border rounded-sm bg-card flex items-center justify-center transition-colors hover:bg-primary/10"
+                                    aria-label="Toggle theme"
                                 >
                                     {mounted && theme === "dark" ? (
                                         <Sun className="h-5 w-5 text-primary" />

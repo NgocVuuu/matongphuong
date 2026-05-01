@@ -28,20 +28,18 @@ const features = [
 
 export function WhyUs() {
     return (
-        <section className="section-padding bg-gradient-to-b from-background via-amber-50/20 to-background dark:via-amber-950/10 relative overflow-hidden">
-            {/* Decorative Circles */}
-            <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+        <section className="section-padding bg-card border-y border-border relative overflow-hidden">
 
             <div className="container-custom relative z-10">
                 <div className="text-center mb-16">
+                    <span className="text-primary font-semibold uppercase tracking-widest text-xs mb-3 block font-heading">LỰA CHỌN TỪ THIÊN NHIÊN</span>
                     <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-foreground">Tại Sao Chọn Chúng Tôi?</h2>
-                    <p className="text-foreground/70 dark:text-foreground/60 max-w-2xl mx-auto text-lg">
-                        Chúng tôi không chỉ bán mật ong, chúng tôi trao gửi sức khỏe và niềm tin đến từng gia đình Việt.
+                    <p className="text-foreground/70 max-w-2xl mx-auto text-lg italic font-serif">
+                        Sản phẩm mang dấu ấn của núi rừng, hướng tới sự dung dị và an lành nhất cho sức khỏe gia đình bạn.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
@@ -49,13 +47,13 @@ export function WhyUs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-gradient-to-br from-amber-50 via-white to-amber-50 dark:bg-[#2d1b0e] dark:from-transparent dark:via-transparent dark:to-transparent p-8 rounded-2xl border-2 border-amber-200 dark:border-amber-800 hover:border-amber-400 dark:hover:border-amber-600 hover:shadow-xl transition-all hover:-translate-y-1 shadow-lg"
+                            className="bg-background p-8 rounded-sm border border-border hover:border-primary/50 transition-colors"
                         >
-                            <div className="w-14 h-14 bg-gradient-to-r from-amber-400 to-amber-600 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg rotate-3 hover:rotate-0 transition-transform duration-300">
-                                <feature.icon className="h-7 w-7" />
+                            <div className="w-12 h-12 bg-primary/10 text-primary flex items-center justify-center mb-6 border border-primary/20">
+                                <feature.icon className="h-6 w-6" strokeWidth={1.5} />
                             </div>
-                            <h3 className="text-xl font-bold mb-3 text-foreground">{feature.title}</h3>
-                            <p className="text-foreground/70 dark:text-foreground/60 leading-relaxed">
+                            <h3 className="text-xl font-bold mb-3 text-foreground font-heading">{feature.title}</h3>
+                            <p className="text-foreground/70 leading-relaxed text-sm">
                                 {feature.description}
                             </p>
                         </motion.div>

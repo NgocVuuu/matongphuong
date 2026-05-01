@@ -7,7 +7,7 @@ import logoLight from "@/assets/images/logo-light.png";
 
 export function Footer() {
     return (
-        <footer className="bg-gradient-to-br from-amber-900 via-amber-800 to-amber-900 text-amber-50 pt-16 pb-8">
+        <footer className="bg-[#2d1b0e] text-amber-50 pt-16 pb-8 border-t border-[#4a3324]">
             <div className="container-custom grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 {/* Brand */}
                 <div>
@@ -66,9 +66,9 @@ export function Footer() {
                         <input
                             type="email"
                             placeholder="Email của bạn"
-                            className="px-4 py-2 rounded bg-white/10 border border-white/20 focus:outline-none focus:border-amber-300 text-white placeholder:text-white/50"
+                            className="px-4 py-2 rounded-sm bg-transparent border border-white/20 focus:outline-none focus:border-amber-300 text-white placeholder:text-white/50"
                         />
-                        <button className="px-4 py-2 bg-gradient-to-r from-amber-400 to-amber-600 text-white font-bold rounded hover:from-amber-500 hover:to-amber-700 transition-colors shadow-md">
+                        <button className="px-4 py-2 bg-primary border border-primary text-white font-semibold rounded-sm hover:bg-primary/90 transition-colors uppercase text-sm tracking-wider">
                             Đăng ký
                         </button>
                     </form>
